@@ -21,7 +21,7 @@ def send_welcome(message):
 def send_welcome(message):
     bot.reply_to(message, 'Send commands starting with "/"')
 
-@bot.message_handler(func=lambda msg: msg.text is not None and '@' is in msg.text)
+@bot.message_handler(func=lambda msg: msg.text is not None and '@' in msg.text)
 def at_answer(message):
     texts = message.text.split()
     at_text = find_at(texts)
