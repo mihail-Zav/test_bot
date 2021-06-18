@@ -21,6 +21,10 @@ def send_welcome(message):
 def send_welcome(message):
     bot.reply_to(message, 'Send commands starting with "/"')
 
+@bot.message_handler(func = lambda m: True)
+def echo_meddage(message):
+    bot.reply_to(message, message)
+
 @bot.message_handler(func=lambda msg: msg.text is not None and '@' in msg.text)
 def at_answer(message):
     texts = message.text.split()
