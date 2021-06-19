@@ -25,7 +25,7 @@ def send_welcome(message):
 def echo_meddage(message):
     bot.reply_to(message, message.text)
 
-@bot.message_handler(func=lambda msg: msg.content_type == "photo")
+@bot.message_handler(content_types = ["photo"])
 def echo_photo(message):
     # fileID = message.photo[-1].file_id
     # file = bot.get_file(fileID)
