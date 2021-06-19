@@ -25,6 +25,10 @@ def send_welcome(message):
 def echo_meddage(message):
     bot.reply_to(message, message.text)
 
+@bot.message_handler(func=lambda msg: msg.photo is not None)
+def echo_photo(message):
+    bot.reply_to(message, message.photo)
+
 @bot.message_handler(func=lambda msg: msg.text is not None and '@' in msg.text)
 def at_answer(message):
     texts = message.text.split()
