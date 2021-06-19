@@ -27,7 +27,9 @@ def echo_meddage(message):
 
 @bot.message_handler(func=lambda msg: msg.photo is not None)
 def echo_photo(message):
-    bot.reply_to(message, message.photo)
+    fileID = message.photo[-1].file_id
+    file = bot.get_file(fileID)
+    bot.reply_to(message, file)
 
 @bot.message_handler(func=lambda msg: msg.text is not None and '@' in msg.text)
 def at_answer(message):
