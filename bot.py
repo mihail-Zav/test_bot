@@ -19,7 +19,7 @@ def send_welcome(message):
 
 @bot.message_handler(commands=['help'])
 def send_welcome(message):
-    bot.reply_to(message, 'Send commands starting with "/"')
+    bot.reply_to(message, 'Send commands starting with "/". Test 123')
 
 @bot.message_handler(func = lambda m: True)
 def echo_meddage(message):
